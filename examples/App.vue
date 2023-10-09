@@ -5,36 +5,55 @@
  import PiPop from '../packages/pop/src/Pop.vue'
 
  const show = ref(false)
- const show2 = ref(false) 
+ const show2 = ref(false)
+ function close() {
+   console.log("close")
+   show.value = false
+ }
+ function close2() {
+   console.log("close")
+   show2.value = false
+ }
 </script>
 
 <template>
-  {{show}}
-  <div style="height:45vh;"></div>
-  <div style="margin-left:50px;">
-
-	<PiPop :disable="show" :placement="'top'" width="200px">
+  <br/><br/>
+	
+  <PiPop v-model:disable="show" :placement="'bottom'"  @close="close" :key="123">
 	  <template #button>
-		<button @click="show=!show">Show</button>
+		<div style="width:30px;">
+          <button @click="show=!show">Show</button>
+        </div>
 	  </template>
 	  <template #content>
 		<div>
-		  <h1>KkK</h1>
+		  <h1>K1kK</h1>
 		</div>
 	  </template>
 	</PiPop>
 
-	<!-- <PiPop :disable="show2" :placement="'top'">
-		 <template #button>
-		 <button @click="show2=!show2">Show</button>
-		 </template>
-		 <template #content>
-		 fasdkfjsdlkfj
-		 </template>
-		 </PiPop> -->
+    
+    <PiPop v-model:disable="show2" :placement="'bottom'" width="200px" @close="close2" :key="234">
+	  <template #button>
+		<div style="width:30px;">
+          <button @click="show2=!show2">Show2</button>
+        </div>
+	  </template>
+	  <template #content>
+		<div>
+		  
+          <label for="asdf" style="display:flex;background:#ccc;">
+            <input type="radio" id="asdf" /> <div>asdf</div>
+          </label>
 
-  </div>
+          <label for="asdf1" style="display:flex;background:#ccc;">
+            <input type="radio" id="asdf1" /> <div>asdf</div>
+          </label>
 
+          
+		</div>
+	  </template>
+</PiPop>
 
 
 </template>
