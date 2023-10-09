@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import  Pi from '../PiPop'
+import  {PiPop} from '../PiPop'
 
 const app = createApp(App)
-app.use(Pi)
+app.use(PiPop)
 app.mount('#app')

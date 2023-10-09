@@ -1,24 +1,29 @@
 <script setup lang="ts">
+ // import  {PiPop} from '../PiPop'
+
+ import {ref} from 'vue'
+ import PiPop from '../packages/pop/src/Pop.vue'
+
+ const show = ref(true)
  
 </script>
 
 <template>
+  {{show}}
+  <div style="height:45vh;"></div>
+  <div style="margin-left:50px;">
+	<PiPop :disable="show">
+	  <template #button>
+		<button @click="show=!show">Show</button>
+	  </template>
+	</PiPop>
+	asdfsdf
+  </div>
 
-  <PiPop></PiPop>
-  <pi-pop></pi-pop>
+
+
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+
 </style>
