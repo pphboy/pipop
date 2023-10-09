@@ -1,0 +1,14 @@
+{
+	"name": "pipop", 
+  	"private": false, 
+	"version": "0.0.6", 
+	"description": "Pop Card",
+	"main": "pipop.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": ["pipop"],
+	"author": "pi",
+	"license": "ISC"
+}
+
