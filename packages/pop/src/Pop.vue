@@ -64,12 +64,12 @@
     </div>
 
 	<div style="float:left;" >
-      <transition appear>
-	  <div class="pop-card" ref="popcard" style="" v-if="disable" :style="{
-																  top:topVar,
+      <transition appear mode="out-in">
+	    <div class="pop-card" ref="popcard" style="" v-if="disable" :style="{
+																    top:topVar,
 																	}">
-		<slot name="content"></slot>
-	  </div>
+		  <slot name="content" ></slot>
+	    </div>
 	  </transition>
     </div>
   </div>
@@ -80,12 +80,12 @@
  .pop-card {
 	 position: absolute;
 	 background: white;
-	 border:1px solid gray;
+	 /* border:1px solid gray; */
 	 padding: 10px;
 	 border-radius: 3px;
      z-index: 100;
      left:0;
-	 box-shadow: 0px 0px 12px rgba(0, 0, 0, .12);
+	 box-shadow: 0px 0px 12px rgba(0, 0, 0, .20);
  }
  .pipop {
      width:0;
@@ -94,8 +94,9 @@
  .pibtn {
   
  }
- .v-enter-active,
+ .v-enter-active ,
  .v-leave-active {
+
 	 transition: opacity 0.5s ease;
  }
 
